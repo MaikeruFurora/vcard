@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 100vh;
+  /* background-color: #00bae6; */
+  background: rgb(37, 39, 40);
+  overflow: hidden;
+}
+
+.icons{
+  position: absolute;
+  right: 0px;
+  bottom: 10px;
+  padding: 10px;
+  width: 100px;
+  height: 210px;
+}
+.back-image {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.plus-icon {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+.plus-icon::before,
+.plus-icon::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  background-color: #333;
+}
+.plus-icon::before {
+  transform: rotate(90deg);
+}
+.plus-icon {
+  bottom: 50px;
+}
+.image-icon {
+  position: absolute;
+  bottom: 120px;
+  right: 30px;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  padding:10px;
+}
+
+.card-container{
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.card-container.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  border-radius: 10px;
+}
+
+.card-front{
+  background: white;
+  display: flex;
+  margin: 0 auto;
+  width: 500px;
+  gap: 10px 17px;
+  padding: 20px 27px;
+  box-sizing: border-box;
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.card-back {
+  width: 100%;
+  border: 8px;
+  transform: rotateY(180deg);
+  border-radius: 10px;
+}
+
+.card-content{
+  width: 35%;
+  height: 100%;
+}
+.card-logo{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 25px;
+}
+.front-image{
+  position: relative;
+  left: -8px;
+}
+.card-logo span{
+  font-family: Open sans;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: bold;
+  color: #063A5C;
+  text-align: center;
+  margin-top: 85px;
+}
+.card-description{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 269px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+.card-description span:first-child{
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #063A5C;
+}
+.card-description span:nth-child(2){
+  font-family: Open Sans;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #063A5C;
+}
+.card-description span:nth-child(3){
+  font-family: Open Sans;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #063A5C;
+}
+.card-description span{
+  font-family: Open Sans;
+  font-size: 12px;
+  color: #2B5774;
+}
+/* .container {
+    position: relative;
+    max-width: 100%;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+} */
+
+@media screen and (max-width: 319px){
+  .card-container{
+    position: fixed;
+  }
+}
+
+/* Mobile Small */
+@media screen and (min-width: 320px) and (max-width: 360px){
+  .plus-icon {
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+  }
+  .image-icon {
+    position: absolute;
+    bottom: 120px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  .card-front, .card-back{
+    border-radius: 0px;
+  }
+  .back-image{
+    border-radius: 0px;
+  }
+  .icons{
+    position: absolute;
+    right: 0px;
+    bottom: 15px;
+    width: 100px;
+    height: 210px;
+  }
+  .card{
+    height: 240px;
+  }
+  .card-logo{
+    position: absolute;
+    top: 10px;
+    left: -1%;
+    width: 100px;
+  }
+  .front-image{
+    transform: scale(0.8);
+  }
+  .card-logo span{
+    margin-top: 50px;
+    font-size: 10px;
+  }
+  .card-description{
+    position: absolute;
+    top: 10px;
+    right: -10%;
+    width: 240px;
+    transform: scale(0.9);
+  }
+  .card-description span:first-child{
+    font-family: Open Sans;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span:nth-child(2){
+    font-family: Open Sans;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span:nth-child(3){
+    font-family: Open Sans;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span{
+    font-family: Open Sans;
+    font-size: 10px;
+    color: #2B5774;
+  }
+}
+
+/* Mobile Medium */
+@media screen and (min-width: 360px) and (max-width: 375px){
+  .card{
+    height: 250px;
+    border-radius: 0px;
+  }
+  .card-front, .card-back{
+    border-radius: 0px;
+  }
+  .back-image{
+    border-radius: 0px;
+  }
+  .card-logo{
+    position: absolute;
+    top: 10px;
+    left: -1%;
+    width: 100px;
+  }
+  .front-image{
+    transform: scale(0.85);
+  }
+  .card-logo span{
+    margin-top: 55px;
+    font-size: 11px;
+  }
+  .card-description{
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 240px;
+    transform: scale(0.9);
+  }
+  .card-description span:first-child{
+  font-family: Open Sans;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #063A5C;
+  }
+  .card-description span:nth-child(2){
+    font-family: Open Sans;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span:nth-child(3){
+    font-family: Open Sans;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span{
+    font-family: Open Sans;
+    font-size: 11px;
+    color: #2B5774;
+  }
+}
+
+/* Mobile Large */
+@media screen and (min-width: 376px) and (max-width: 425px){
+  .card{
+    height: 260px;
+  }
+  .card-front, .card-back{
+    border-radius: 0px;
+  }
+  .back-image{
+    border-radius: 0px;
+  }
+  .card-logo{
+    position: absolute;
+    top: 10px;
+    left: 1%;
+    width: 100px;
+  }
+  .front-image{
+    transform: scale(0.9);
+  }
+  .card-logo span{
+    margin-top: 60px;
+    font-size: 12px;
+  }
+  .card-description{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 240px;
+    transform: scale(0.95);
+  }
+  .card-description span:first-child{
+    font-family: Open Sans;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span:nth-child(2){
+    font-family: Open Sans;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span:nth-child(3){
+    font-family: Open Sans;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span{
+    font-family: Open Sans;
+    font-size: 11.5px;
+    color: #2B5774;
+  }
+}
+
+/* Mobile Iphone */
+@media screen and (min-width: 426px) and (max-width: 472px){
+  .card{
+    height: 270px;
+  }
+  .card-front, .card-back{
+    border-radius: 0px;
+  }
+  .back-image{
+    border-radius: 0px;
+  }
+  .card-logo{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+  }
+  .front-image{
+    transform: scale(0.9);
+  }
+  .card-logo span{
+    margin-top: 70px;
+    font-size: 12px;
+  }
+  .card-description{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 240px;
+    transform: scale(0.95);
+  }
+  .card-description span:first-child{
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span:nth-child(2){
+    font-family: Open Sans;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span:nth-child(3){
+    font-family: Open Sans;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #063A5C;
+  }
+  .card-description span{
+    font-family: Open Sans;
+    font-size: 11.7px;
+    color: #2B5774;
+  }
+}
